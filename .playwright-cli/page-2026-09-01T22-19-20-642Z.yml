@@ -1,0 +1,147 @@
+- generic [active] [ref=e1]:
+  - paragraph [ref=e3]:
+    - text: Hello
+    - generic [ref=e4]: .
+  - banner [ref=e5]:
+    - link "© William Palomino Elite Closer" [ref=e6] [cursor=pointer]:
+      - /url: "#top"
+      - generic [ref=e7]: ©
+      - generic [ref=e9]:
+        - generic [ref=e10]: William Palomino
+        - generic [ref=e11]: Elite Closer
+    - navigation [ref=e12]:
+      - link "About" [ref=e13] [cursor=pointer]:
+        - /url: "#about"
+      - link "Experience" [ref=e14] [cursor=pointer]:
+        - /url: "#experience"
+      - link "Approach" [ref=e15] [cursor=pointer]:
+        - /url: "#approach"
+      - link "Contact" [ref=e16] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - img [ref=e21]
+        - paragraph [ref=e24]:
+          - text: Located
+          - text: in Los Angeles,
+          - text: California
+      - generic [ref=e25]:
+        - img [ref=e26]
+        - heading "Account Executive & Relationship Builder" [level=2] [ref=e28]:
+          - text: Account Executive
+          - text: "& Relationship Builder"
+      - img "Portrait of William Palomino" [ref=e30]
+      - generic [ref=e32]:
+        - generic [ref=e33]: William Palomino —
+        - generic [ref=e34]: William Palomino —
+        - generic [ref=e35]: William Palomino —
+        - generic [ref=e36]: William Palomino —
+      - link "Scroll down" [ref=e37] [cursor=pointer]:
+        - /url: "#about"
+        - img [ref=e38]:
+          - generic [ref=e39]: Scroll for the story — Scroll for the story —
+        - img [ref=e40]
+    - generic [ref=e42]:
+      - paragraph [ref=e43]:
+        - text: Helping brands grow through
+        - emphasis [ref=e44]: relationships
+        - text: that outlast the deal — from the first hello to the long-term partnership.
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: I'm William — an account executive with roots in B2C and B2B sales. I believe the best sellers don't pitch. They listen, they solve, and they show up long after the contract is signed.
+        - link "About me" [ref=e47] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e48]: About me
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - text: 0+
+        - paragraph [ref=e52]: Years in sales
+      - generic [ref=e53]:
+        - text: 0%
+        - paragraph [ref=e54]: Avg. quota attainment
+      - generic [ref=e55]:
+        - text: 0+
+        - paragraph [ref=e56]: Accounts won & managed
+      - generic [ref=e57]:
+        - text: 0%
+        - paragraph [ref=e58]: Client retention rate
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: "01"
+        - heading "Experience" [level=2] [ref=e62]
+      - generic [ref=e63]:
+        - article [ref=e64]:
+          - generic [ref=e65]: 2021 — Present
+          - generic [ref=e66]:
+            - heading "Account Executive · Cali Fit" [level=3] [ref=e67]
+            - paragraph [ref=e68]: Own the full sales cycle for memberships, corporate wellness accounts, and partnership deals across the Los Angeles market. Turned walk-ins into a referral engine and built a corporate book of business from zero.
+            - list [ref=e69]:
+              - listitem [ref=e70]: Full-cycle sales
+              - listitem [ref=e71]: Corporate accounts
+              - listitem [ref=e72]: Referral programs
+              - listitem [ref=e73]: CRM & pipeline
+        - article [ref=e74]:
+          - generic [ref=e75]: 2018 — 2021
+          - generic [ref=e76]:
+            - heading "Senior Sales Consultant · Westside Fitness Group" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Led a consultative sales floor, coached a team of five consultants, and consistently ranked top of the region on new-member revenue. Rebuilt the follow-up process that lifted close rates double digits.
+            - list [ref=e79]:
+              - listitem [ref=e80]: Team leadership
+              - listitem [ref=e81]: Consultative selling
+              - listitem [ref=e82]: Process design
+        - article [ref=e83]:
+          - generic [ref=e84]: 2015 — 2018
+          - generic [ref=e85]:
+            - heading "Territory Sales Representative · Pacific Coast Brands" [level=3] [ref=e86]
+            - paragraph [ref=e87]: "Managed a coastal LA territory of retail accounts — prospecting, merchandising, and growing repeat orders. Learned the ground game: every account is a relationship, not a transaction."
+            - list [ref=e88]:
+              - listitem [ref=e89]: Territory management
+              - listitem [ref=e90]: B2B prospecting
+              - listitem [ref=e91]: Account growth
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: "02"
+        - heading "How I sell" [level=2] [ref=e95]
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: "01"
+          - generic [ref=e99]:
+            - heading "Listen first" [level=3] [ref=e100]
+            - paragraph [ref=e101]: Discovery isn't a checkbox. I dig until I understand the real problem — the one behind the one you told me about.
+        - generic [ref=e102]:
+          - generic [ref=e103]: "02"
+          - generic [ref=e104]:
+            - heading "Solve, don't pitch" [level=3] [ref=e105]
+            - paragraph [ref=e106]: If the fit isn't there, I'll say so. The deals I close stick because they were the right call for both sides.
+        - generic [ref=e107]:
+          - generic [ref=e108]: "03"
+          - generic [ref=e109]:
+            - heading "Close with clarity" [level=3] [ref=e110]
+            - paragraph [ref=e111]: No pressure theatrics. Clear terms, clean next steps, and a decision everyone feels good about on Monday.
+        - generic [ref=e112]:
+          - generic [ref=e113]: "04"
+          - generic [ref=e114]:
+            - heading "Grow the account" [level=3] [ref=e115]
+            - paragraph [ref=e116]: The signature is the starting line. Renewals, referrals, and expansion come from showing up after the sale.
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - img "William Palomino" [ref=e120]
+        - heading "Let's work together" [level=2] [ref=e121]:
+          - text: Let's work
+          - text: together
+      - link "Get in touch" [ref=e123] [cursor=pointer]:
+        - /url: mailto:hello@williampalomino.com
+        - generic [ref=e124]: Get in touch
+      - generic [ref=e125]:
+        - link "hello@williampalomino.com" [ref=e126] [cursor=pointer]:
+          - /url: mailto:hello@williampalomino.com
+        - link "LinkedIn" [ref=e127] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/william-palomino-14767a17/
+  - contentinfo [ref=e128]:
+    - generic [ref=e129]:
+      - generic [ref=e130]: Version
+      - generic [ref=e131]: 2026 © Edition
+    - generic [ref=e132]:
+      - generic [ref=e133]: Socials
+      - link "LinkedIn" [ref=e134] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/william-palomino-14767a17/
