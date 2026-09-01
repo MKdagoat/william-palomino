@@ -60,14 +60,15 @@ if (window.gsap && window.ScrollTrigger) {
 
   // Stat counters
   document.querySelectorAll(".stat__number").forEach((el) => {
-    const end = parseInt(el.dataset.count, 10);
+    const end = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
     const obj = { v: 0 };
     gsap.to(obj, {
       v: end,
       duration: 1.6,
       ease: "power2.out",
       scrollTrigger: { trigger: el, start: "top 88%" },
-      onUpdate: () => (el.textContent = Math.round(obj.v)),
+      onUpdate: () => (el.textContent = obj.v.toFixed(decimals)),
     });
   });
 } else {

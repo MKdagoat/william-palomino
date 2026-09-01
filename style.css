@@ -251,13 +251,13 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
 }
 .stat:last-child { border-right: none; }
 .stat:not(:first-child) { padding-left: 1.5rem; }
-.stat__number, .stat__suffix {
+.stat__number, .stat__suffix, .stat__prefix {
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1;
 }
-.stat__suffix { color: var(--accent); }
+.stat__suffix, .stat__prefix { color: var(--accent); }
 .stat__label { color: var(--ink-dim); margin-top: 0.75rem; font-size: 0.95rem; }
 
 /* ============ EXPERIENCE ============ */
