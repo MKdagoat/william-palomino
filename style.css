@@ -344,7 +344,7 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
   background: #141517;
   min-height: calc(100svh - 5.5rem);
   display: flex; flex-direction: column; justify-content: flex-start;
-  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-top: clamp(4rem, 14vh, 10rem);
   padding-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 .contact__head {
@@ -369,7 +369,7 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
 }
 .contact__line {
   width: 100%; max-width: 80rem;
-  margin: clamp(4rem, 12vh, 9rem) auto 0;
+  margin: clamp(2.5rem, 6vh, 4.5rem) auto 0;
   border-top: 1px solid var(--line);
   display: flex; justify-content: flex-end;
   padding-right: clamp(0.5rem, 2vw, 2.5rem);
@@ -381,7 +381,7 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
 }
 .contact__meta {
   width: 100%; max-width: 80rem;
-  margin: clamp(2.5rem, 5vh, 3.5rem) auto 0;
+  margin: clamp(2rem, 4vh, 3rem) auto 0;
   display: flex; flex-wrap: wrap; gap: 1.25rem;
 }
 .contact__chip {
