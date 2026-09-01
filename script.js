@@ -51,13 +51,6 @@ if (window.gsap && window.ScrollTrigger) {
     scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
   });
 
-  // Marquee slows/shifts on scroll
-  gsap.to(".hero__marquee-track", {
-    xPercent: -8,
-    ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-  });
-
   // Stat counters
   document.querySelectorAll(".stat__number").forEach((el) => {
     const end = parseFloat(el.dataset.count);
