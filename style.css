@@ -310,10 +310,13 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
 /* ============ CONTACT ============ */
 .contact {
   background: #141517;
-  padding-bottom: clamp(4rem, 10vw, 8rem);
+  min-height: calc(100svh - 5.5rem);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 .contact__head {
-  max-width: 80rem; margin: 0 auto;
+  width: 100%; max-width: 80rem; margin: 0 auto;
   display: flex; align-items: center; gap: clamp(1.5rem, 3.5vw, 3rem);
 }
 .contact__avatar {
@@ -331,11 +334,11 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
   line-height: 1.05;
 }
 .contact__line {
-  max-width: 80rem;
-  margin: clamp(3rem, 6vw, 5rem) auto 0;
+  width: 100%; max-width: 80rem;
+  margin: clamp(2rem, 5vh, 4rem) auto 0;
   border-top: 1px solid var(--line);
   display: flex; justify-content: flex-end;
-  padding-right: clamp(1rem, 12vw, 14rem);
+  padding-right: clamp(0.5rem, 2vw, 2.5rem);
 }
 .contact__line .btn-round {
   width: 12.5rem; height: 12.5rem;
@@ -343,8 +346,8 @@ section { padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 6vw, 6rem); }
   margin-top: -6.25rem;
 }
 .contact__meta {
-  max-width: 80rem;
-  margin: clamp(4rem, 9vw, 7rem) auto 0;
+  width: 100%; max-width: 80rem;
+  margin: clamp(2.5rem, 6vh, 4.5rem) auto 0;
   display: flex; flex-wrap: wrap; gap: 1.25rem;
 }
 .contact__chip {
