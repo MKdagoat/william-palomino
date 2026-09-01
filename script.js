@@ -18,6 +18,20 @@ if (window.Lenis) {
   requestAnimationFrame(raf);
 }
 
+// ---------- Mobile menu ----------
+const burger = document.getElementById("navBurger");
+const overlay = document.getElementById("menuOverlay");
+if (burger && overlay) {
+  const setMenu = (open) => {
+    overlay.classList.toggle("is-open", open);
+    burger.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+  burger.addEventListener("click", () => setMenu(!overlay.classList.contains("is-open")));
+  overlay.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+}
+
 // Anchor links through Lenis
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {
