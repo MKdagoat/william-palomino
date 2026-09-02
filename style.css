@@ -201,7 +201,6 @@ section { padding: clamp(4.5rem, 10vw, 8rem) clamp(1.25rem, 4vw, 3rem); }
   border-bottom: 1px solid var(--line);
   padding-bottom: 1.25rem;
 }
-.section-head__no { font-family: var(--mono); color: var(--lime); font-size: 0.95rem; }
 .section-head h2 {
   font-weight: 900;
   font-size: clamp(2.2rem, 5.5vw, 4.2rem);
