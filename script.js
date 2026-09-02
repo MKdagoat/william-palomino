@@ -1,22 +1,29 @@
-/* William Palomino — interactions */
+/* William Palomino — V4 interactions
+   Motion honors prefers-reduced-motion: everything degrades to static. */
 
-// ---------- Preloader ----------
-window.addEventListener("load", () => {
-  const pre = document.getElementById("preloader");
-  setTimeout(() => pre.classList.add("is-done"), 700);
-  setTimeout(() => (pre.style.display = "none"), 1600);
-});
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // ---------- Smooth scroll (Lenis) ----------
 let lenis = null;
-if (window.Lenis) {
-  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+if (window.Lenis && !reduceMotion) {
+  lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
 }
+
+// ---------- Anchor links ----------
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const target = document.querySelector(a.getAttribute("href"));
+    if (!target) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(target, { duration: 1.2 });
+    else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  });
+});
 
 // ---------- Mobile menu ----------
 const burger = document.getElementById("navBurger");
@@ -32,70 +39,45 @@ if (burger && overlay) {
   overlay.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 }
 
-// Anchor links through Lenis
-document.querySelectorAll('a[href^="#"]').forEach((a) => {
-  a.addEventListener("click", (e) => {
-    const target = document.querySelector(a.getAttribute("href"));
-    if (!target) return;
-    e.preventDefault();
-    if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.4 });
-    else target.scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-// ---------- Scroll animations (GSAP) ----------
-if (window.gsap && window.ScrollTrigger) {
+// ---------- Scroll reveals ----------
+if (window.gsap && window.ScrollTrigger && !reduceMotion) {
   gsap.registerPlugin(ScrollTrigger);
-
-  // Reveal elements
   document.querySelectorAll(".reveal").forEach((el) => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 0.9,
       ease: "power3.out",
-      scrollTrigger: { trigger: el, start: "top 85%" },
-    });
-  });
-
-  // Hero portrait subtle parallax
-  gsap.to(".hero__portrait img", {
-    yPercent: 12,
-    ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-  });
-
-  // Stat counters
-  document.querySelectorAll(".stat__number").forEach((el) => {
-    const end = parseFloat(el.dataset.count);
-    const decimals = parseInt(el.dataset.decimals || "0", 10);
-    const obj = { v: 0 };
-    gsap.to(obj, {
-      v: end,
-      duration: 1.6,
-      ease: "power2.out",
-      scrollTrigger: { trigger: el, start: "top 88%" },
-      onUpdate: () => (el.textContent = obj.v.toFixed(decimals)),
+      scrollTrigger: { trigger: el, start: "top 86%" },
+      onComplete: () => el.classList.add("is-visible"),
     });
   });
 } else {
-  // Fallback: show everything
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
-  document.querySelectorAll(".stat__number").forEach((el) => (el.textContent = el.dataset.count));
 }
 
-// ---------- Magnetic buttons ----------
-document.querySelectorAll(".magnetic").forEach((el) => {
-  const strength = 22;
-  el.addEventListener("mousemove", (e) => {
-    const r = el.getBoundingClientRect();
-    const x = e.clientX - r.left - r.width / 2;
-    const y = e.clientY - r.top - r.height / 2;
-    el.style.transform = `translate(${(x / r.width) * strength}px, ${(y / r.height) * strength}px)`;
+// ---------- Chapters track: pointer drag ----------
+const track = document.getElementById("chaptersTrack");
+if (track) {
+  let isDown = false;
+  let startX = 0;
+  let startScroll = 0;
+  track.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") return;
+    isDown = true;
+    startX = e.clientX;
+    startScroll = track.scrollLeft;
+    track.classList.add("is-dragging");
+    track.setPointerCapture(e.pointerId);
   });
-  el.addEventListener("mouseleave", () => {
-    el.style.transition = "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
-    el.style.transform = "translate(0, 0)";
-    setTimeout(() => (el.style.transition = ""), 400);
+  track.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    track.scrollLeft = startScroll - (e.clientX - startX);
   });
-});
+  const endDrag = () => {
+    isDown = false;
+    track.classList.remove("is-dragging");
+  };
+  track.addEventListener("pointerup", endDrag);
+  track.addEventListener("pointercancel", endDrag);
+}
