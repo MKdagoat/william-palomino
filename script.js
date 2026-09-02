@@ -3,6 +3,7 @@
 // ---------- Preloader ----------
 window.addEventListener("load", () => {
   const pre = document.getElementById("preloader");
+  if (!pre) return;
   setTimeout(() => pre.classList.add("is-done"), 700);
   setTimeout(() => (pre.style.display = "none"), 1600);
 });
