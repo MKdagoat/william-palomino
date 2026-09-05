@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>William Palomino, Account Executive</title>
-  <meta name="description" content="William Palomino is an account executive with 13 years in B2B and B2C sales: million-dollar club, 130% quota attainment, and relationships that outlast the deal." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23206246'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23f4f5f2' text-anchor='middle'%3EWP%3C/text%3E%3C/svg%3E" />
+  <title>William Palomino, Sales Executive and Visual Storyteller</title>
+  <meta name="description" content="William Palomino: account executive with 13 years in B2B and B2C sales, and a photographer and filmmaker based in Southern California." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141414'/%3E%3Ctext x='32' y='44' font-family='Arial Narrow,Arial,sans-serif' font-size='30' font-weight='700' fill='%23fbfbf9' text-anchor='middle'%3EWP%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="nav">
+  <header class="nav" id="nav">
     <a class="nav__logo" href="#top">William Palomino</a>
     <nav class="nav__links">
-      <a class="nav__link" href="#record">Record</a>
-      <a class="nav__link" href="#chapters">Chapters</a>
+      <a class="nav__link" href="#sales">Sales</a>
+      <a class="nav__link" href="#photography">Photography</a>
+      <a class="nav__link" href="#films">Films</a>
       <a class="nav__link" href="#about">About</a>
-      <a class="nav__link" href="#method">Method</a>
     </nav>
-    <a class="btn btn--solid nav__cta" href="mailto:hello@williampalomino.com">Get in touch</a>
+    <a class="btn nav__cta" href="mailto:hello@williampalomino.com">Inquire</a>
   </header>
 
   <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
@@ -30,142 +30,182 @@
 
   <div class="menu-overlay" id="menuOverlay">
     <nav class="menu-overlay__nav">
-      <a href="#record">Record</a>
-      <a href="#chapters">Chapters</a>
+      <a href="#sales">Sales</a>
+      <a href="#photography">Photography</a>
+      <a href="#films">Films</a>
       <a href="#about">About</a>
-      <a href="#method">Method</a>
-      <a href="mailto:hello@williampalomino.com">Get in touch</a>
+      <a href="mailto:hello@williampalomino.com">Inquire</a>
     </nav>
   </div>
 
   <main id="top">
 
-    <!-- Hero: asymmetric split, text left, framed photo right -->
+    <!-- Hero: full-bleed video with poster fallback, centered condensed title -->
     <section class="hero">
-      <div class="hero__text">
-        <h1 class="hero__title reveal">Deals close. Trust compounds.</h1>
-        <p class="hero__sub reveal">
-          Thirteen years of B2B and B2C sales in Southern California, from
-          Fortune 100 cold calls to the million-dollar club.
+      <video class="hero__video" autoplay muted loop playsinline poster="Assets/v5/hero-coast.jpg">
+        <source src="Assets/v5/hero-loop.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__scrim"></div>
+      <div class="hero__content">
+        <h1 class="hero__title reveal">Account Executive<br/>+ Visual Storyteller</h1>
+        <p class="hero__sub reveal">Based in Southern California, working anywhere the light is good.</p>
+      </div>
+    </section>
+
+    <!-- Intro: italic statement left, copy right -->
+    <section class="intro">
+      <p class="intro__statement reveal">Sales by trade. Photography and film by obsession.</p>
+      <div class="intro__copy">
+        <p class="reveal">
+          Thirteen years closing B2B and B2C deals taught me one thing: people buy from
+          people who pay attention. The camera is the same discipline pointed at light,
+          landscape, and the moments most folks walk past.
         </p>
-        <div class="hero__cta reveal">
-          <a class="btn btn--solid" href="mailto:hello@williampalomino.com">Get in touch</a>
-          <a class="btn btn--ghost" href="#record">See the record</a>
+        <p class="reveal">
+          This site holds both halves. The sales record for anyone hiring or partnering,
+          and the photo and film work for anyone who needs a story told well.
+        </p>
+        <a class="btn btn--ghost reveal" href="#sales">See the record</a>
+      </div>
+    </section>
+
+    <!-- Numbers band -->
+    <section class="numbers" id="sales">
+      <div class="numbers__grid">
+        <div class="number reveal">
+          <span class="number__value">13</span>
+          <span class="number__label">years on quota</span>
+        </div>
+        <div class="number reveal">
+          <span class="number__value">$1.4M</span>
+          <span class="number__label">closed in a single year</span>
+        </div>
+        <div class="number reveal">
+          <span class="number__value">130%</span>
+          <span class="number__label">of target, million-dollar club year one</span>
         </div>
       </div>
-      <figure class="hero__media reveal">
-        <img src="Assets/hero-office.jpg" alt="William Palomino on a call in a bright office" />
-      </figure>
     </section>
 
-    <!-- Record: typographic stat block, staggered indents -->
-    <section class="record" id="record">
-      <p class="record__line reveal"><strong>13 years</strong> on quota.</p>
-      <p class="record__line record__line--indent reveal"><strong>$1.4M</strong> closed in a single year.</p>
-      <p class="record__line record__line--indent2 reveal"><strong>130%</strong> of target at <strong>$120K</strong> a month.</p>
-      <p class="record__note reveal">Million-dollar club in year one at ISSA. Every number above is from the 2020 books.</p>
-    </section>
-
-    <!-- Chapters: horizontal scroll-snap track -->
-    <section class="chapters" id="chapters">
-      <div class="chapters__head reveal">
-        <h2>Seven chapters</h2>
-        <p>Every one of them carried a number.</p>
-      </div>
-      <div class="chapters__track" id="chaptersTrack">
-        <article class="chapter chapter--current reveal">
-          <span class="chapter__years">2020 - Now</span>
-          <h3>Personal Trainer &amp; Coach</h3>
-          <span class="chapter__co">Cali Fit</span>
-          <p>My own private and online coaching practice. Each client is a sale I re-earn every week.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2018 - 2025</span>
-          <h3>Senior Fitness Education Advisor</h3>
-          <span class="chapter__co">ISSA</span>
-          <p>Million-dollar club in year one. 130% of quota and $1.4M in 2020. Promoted to senior, training the reps who came after me.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2016 - 2018</span>
-          <h3>Sales Manager</h3>
-          <span class="chapter__co">American Vision</span>
-          <p>High-ticket jewelry on commission. Monthly revenues up 55% while running the floor.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2014 - 2016</span>
-          <h3>Inside Sales, Educational Coordinator</h3>
-          <span class="chapter__co">AATBS</span>
-          <p>$100K a month in behavioral-science training. 150 calls a day across the US, Canada, and Puerto Rico.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2014 - 2015</span>
-          <h3>Retail Solar Advisor</h3>
-          <span class="chapter__co">Sungevity</span>
-          <p>$2.3M in new solar revenue. Twenty leads a day, pipeline in Salesforce, retail partnership with Lowe's.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2013</span>
-          <h3>Inside Sales, Supply Chain</h3>
-          <span class="chapter__co">DEX</span>
-          <p>Cold-called Fortune 100 buyers: IBM, HP, Dell, GE, Philips, Siemens. Fifty decision-maker contacts a day.</p>
-        </article>
-        <article class="chapter reveal">
-          <span class="chapter__years">2011 - 2013</span>
-          <h3>The Phone Years</h3>
-          <span class="chapter__co">Early career</span>
-          <p>College fundraising, statewide voter outreach, B2C subscriptions, and a student startup at UC Santa Barbara.</p>
-        </article>
+    <!-- Sales record: grouped chunks -->
+    <section class="record">
+      <h2 class="section-title reveal">The sales record</h2>
+      <div class="record__groups">
+        <div class="record__group reveal">
+          <h3 class="record__group-title">Quota-carrying roles</h3>
+          <ul class="record__list">
+            <li>
+              <span class="record__years">2018 - 2025</span>
+              <span class="record__role">Senior Fitness Education Advisor, ISSA</span>
+              <span class="record__note">Million-dollar club in year one. 130% of quota and $1.4M in 2020. Promoted to senior, training new reps.</span>
+            </li>
+            <li>
+              <span class="record__years">2016 - 2018</span>
+              <span class="record__role">Sales Manager, American Vision</span>
+              <span class="record__note">High-ticket jewelry on commission. Monthly revenues up 55% while running the floor.</span>
+            </li>
+            <li>
+              <span class="record__years">2014 - 2016</span>
+              <span class="record__role">Inside Sales, AATBS</span>
+              <span class="record__note">$100K a month in behavioral-science training. 150 calls a day across the US, Canada, and Puerto Rico.</span>
+            </li>
+            <li>
+              <span class="record__years">2014 - 2015</span>
+              <span class="record__role">Retail Solar Advisor, Sungevity</span>
+              <span class="record__note">$2.3M in new solar revenue. Twenty leads a day, pipeline in Salesforce, retail partnership with Lowe's.</span>
+            </li>
+            <li>
+              <span class="record__years">2013</span>
+              <span class="record__role">Inside Sales, DEX</span>
+              <span class="record__note">Cold-called Fortune 100 buyers: IBM, HP, Dell, GE, Philips, Siemens.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="record__group reveal">
+          <h3 class="record__group-title">Roots and side work</h3>
+          <ul class="record__list">
+            <li>
+              <span class="record__years">2020 - Now</span>
+              <span class="record__role">Personal Trainer and Coach, Cali Fit</span>
+              <span class="record__note">Private and online coaching. Each client is a sale re-earned every week.</span>
+            </li>
+            <li>
+              <span class="record__years">2011 - 2013</span>
+              <span class="record__role">The phone years</span>
+              <span class="record__note">College fundraising, statewide voter outreach, B2C subscriptions, and a student startup at UC Santa Barbara.</span>
+            </li>
+          </ul>
+          <p class="record__aside">Bilingual in English and Spanish. Ventura County, California.</p>
+        </div>
       </div>
     </section>
 
-    <!-- About: offset image + text -->
+    <!-- Photography: masonry gallery -->
+    <section class="gallery" id="photography">
+      <div class="gallery__head">
+        <h2 class="section-title reveal">Photography</h2>
+        <p class="gallery__sub reveal">Coast, light, and people in motion.</p>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-coast.jpg" alt="Sea cliffs fading into marine fog on the California coast" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-surfer.jpg" alt="Surfer walking out of the ocean at sunrise" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-athlete.jpg" alt="Athlete sprinting on a coastal trail at sunrise" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-palms.jpg" alt="Palm trees silhouetted against a pink sunset" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-la.jpg" alt="Downtown Los Angeles at blue hour" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-ridge.jpg" alt="Hiker on a mountain ridge above golden mist" loading="lazy" /></figure>
+        <figure class="gallery__item reveal"><img src="Assets/v5/photo-pch.jpg" alt="Pacific Coast Highway at dusk with light trails" loading="lazy" /></figure>
+      </div>
+      <p class="gallery__note reveal">Placeholder imagery for the demo. William's own photography drops in here.</p>
+    </section>
+
+    <!-- Films: full-bleed clip + copy -->
+    <section class="films" id="films">
+      <div class="films__media reveal">
+        <video autoplay muted loop playsinline poster="Assets/v5/photo-pch.jpg">
+          <source src="Assets/v5/film-pch.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="films__copy">
+        <h2 class="section-title reveal">Films</h2>
+        <p class="films__statement reveal">Short films, brand pieces, and a YouTube channel in the works.</p>
+        <p class="reveal">
+          Cinematic, documentary-leaning video for people and places along the coast.
+          The first releases are in production. If you want to be an early collaborator,
+          the line is open.
+        </p>
+        <a class="btn reveal" href="mailto:hello@williampalomino.com">Inquire</a>
+      </div>
+    </section>
+
+    <!-- About: photo left, big headline right -->
     <section class="about" id="about">
       <figure class="about__media reveal">
-        <img src="Assets/hero-portrait-light.jpg" alt="Portrait of William Palomino" />
+        <img src="Assets/v5/about-camera.jpg" alt="William Palomino filming on a beach at dusk" loading="lazy" />
       </figure>
-      <div class="about__text">
-        <h2 class="reveal">Bilingual, consistent, still picking up the phone.</h2>
+      <div class="about__copy">
+        <h2 class="about__title reveal">Hey, I'm William</h2>
         <p class="reveal">
           I started on the dial tone: fundraising for colleges, voter outreach,
-          cold-calling hardware buyers. The habits from those years never left.
-          Show up, dial, listen, follow through.
+          cold-calling Fortune 100 buyers. The habits from those years never left.
+          Show up, listen, follow through.
         </p>
         <p class="reveal">
-          I sell in English and Spanish, and I coach fitness clients on the side.
-          Coaching is retention practice: nobody stays because of the pitch, they
-          stay because of the results.
+          Somewhere along the way I picked up a camera, and the same instincts applied.
+          Watch closely, wait for the real moment, and do not fake it. Weekends are for
+          the coast, the mountains, and whoever is up before sunrise.
         </p>
-      </div>
-    </section>
-
-    <!-- Method: staggered rows, no numbering -->
-    <section class="method" id="method">
-      <h2 class="method__title reveal">How I sell</h2>
-      <div class="method__rows">
-        <div class="method__row reveal">
-          <h3>Listen first</h3>
-          <p>Discovery is not a checkbox. I dig until I find the real problem, the one behind the one you told me about.</p>
-        </div>
-        <div class="method__row method__row--indent reveal">
-          <h3>Solve, don't pitch</h3>
-          <p>If the fit is not there, I say so. Deals stick when they are the right call for both sides.</p>
-        </div>
-        <div class="method__row method__row--indent2 reveal">
-          <h3>Close with clarity</h3>
-          <p>No pressure theatrics. Clear terms, clean next steps, a decision that still feels good on Monday.</p>
-        </div>
-        <div class="method__row method__row--indent3 reveal">
-          <h3>Grow the account</h3>
-          <p>The signature is the starting line. Renewals, referrals, and expansion come from showing up after the sale.</p>
-        </div>
+        <p class="reveal">
+          If you need a closer who can also shoot the campaign, we should talk.
+        </p>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
-      <h2 class="contact__title reveal">Ready for the next number.</h2>
+      <h2 class="contact__title reveal">Let's work together</h2>
+      <p class="contact__sub reveal">Sales roles, partnerships, or a story that needs telling.</p>
       <div class="contact__actions reveal">
-        <a class="btn btn--solid btn--big" href="mailto:hello@williampalomino.com">Get in touch</a>
+        <a class="btn btn--big" href="mailto:hello@williampalomino.com">Inquire</a>
       </div>
       <div class="contact__links reveal">
         <a href="tel:+18052639469">(805) 263-9469</a>

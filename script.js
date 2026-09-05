@@ -1,4 +1,4 @@
-/* William Palomino — V4 interactions
+/* William Palomino — V5 interactions
    Motion honors prefers-reduced-motion: everything degrades to static. */
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -39,6 +39,21 @@ if (burger && overlay) {
   overlay.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 }
 
+// ---------- Nav state past the hero (IntersectionObserver, no scroll listener) ----------
+const nav = document.getElementById("nav");
+const hero = document.querySelector(".hero");
+if (nav && hero && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver(
+    ([entry]) => {
+      const pastHero = !entry.isIntersecting;
+      nav.classList.toggle("is-scrolled", pastHero);
+      if (burger) burger.classList.toggle("is-dark", pastHero);
+    },
+    { rootMargin: "-72px 0px 0px 0px", threshold: 0 }
+  );
+  io.observe(hero);
+}
+
 // ---------- Scroll reveals ----------
 if (window.gsap && window.ScrollTrigger && !reduceMotion) {
   gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +63,7 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion) {
       y: 0,
       duration: 0.9,
       ease: "power3.out",
-      scrollTrigger: { trigger: el, start: "top 86%" },
+      scrollTrigger: { trigger: el, start: "top 88%" },
       onComplete: () => el.classList.add("is-visible"),
     });
   });
@@ -56,28 +71,17 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion) {
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
 }
 
-// ---------- Chapters track: pointer drag ----------
-const track = document.getElementById("chaptersTrack");
-if (track) {
-  let isDown = false;
-  let startX = 0;
-  let startScroll = 0;
-  track.addEventListener("pointerdown", (e) => {
-    if (e.pointerType !== "mouse") return;
-    isDown = true;
-    startX = e.clientX;
-    startScroll = track.scrollLeft;
-    track.classList.add("is-dragging");
-    track.setPointerCapture(e.pointerId);
-  });
-  track.addEventListener("pointermove", (e) => {
-    if (!isDown) return;
-    track.scrollLeft = startScroll - (e.clientX - startX);
-  });
-  const endDrag = () => {
-    isDown = false;
-    track.classList.remove("is-dragging");
-  };
-  track.addEventListener("pointerup", endDrag);
-  track.addEventListener("pointercancel", endDrag);
-}
+// ---------- Videos: pause when off-screen, respect reduced motion ----------
+document.querySelectorAll("video[autoplay]").forEach((v) => {
+  if (reduceMotion) {
+    v.removeAttribute("autoplay");
+    v.pause();
+    return;
+  }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? v.play().catch(() => {}) : v.pause()),
+      { threshold: 0.1 }
+    ).observe(v);
+  }
+});
